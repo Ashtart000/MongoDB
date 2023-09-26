@@ -1,0 +1,12 @@
+POST http://localhost:5000 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Olivie",
+    "weight": 1.0,
+    "ingredients": ["potatoes", "sausage"],
+    "sauce": "mayonesse",
+    "dietType": "none",
+    "isSpicy": false,
+    "expired": "2023-09-27"
+}
