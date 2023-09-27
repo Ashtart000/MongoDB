@@ -8,5 +8,5 @@ Content-Type: application/json
     "sauce": "mayonesse",
     "dietType": "none",
     "isSpicy": false,
-    "expired": "2023-09-27"
+    "expired": "2023-08-26"
 }

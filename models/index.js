@@ -23,14 +23,12 @@ const saladSchema = new Schema({
     isSpicy: Boolean,
     expired: {
         type: Date,
+        required: true,
         validate: {
-            validator: (v) => {
-                v > new Date();
-            }
-        },
-        required: true
+            validator: (v) => v > new Date()
+        }
     }
-})
+});
 
 const Salad = mongoose.model('Salad', saladSchema);
 
