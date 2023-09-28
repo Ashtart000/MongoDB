@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const Salad = require('./Salad');
+const Ingredient = require('./Ingredient');
+
 const DB = process.env.DB_NAME || 'test'
 
 mongoose.connect(`mongodb://127.0.0.1:27017/${DB}`)
@@ -8,28 +10,7 @@ mongoose.connect(`mongodb://127.0.0.1:27017/${DB}`)
     next(err);
 })
 
-const saladSchema = new Schema({
-    name: {
-        type: String,
-        required: [true, 'Name is required!']
-    },
-    weight: Number,
-    ingredients: {
-        type: Array,
-        required: true
-    },
-    sauce: String,
-    dietType: String,
-    isSpicy: Boolean,
-    expired: {
-        type: Date,
-        required: true,
-        validate: {
-            validator: (v) => v > new Date()
-        }
-    }
-});
-
-const Salad = mongoose.model('Salad', saladSchema);
-
-module.exports = {Salad};
+module.exports = {
+    Salad,
+    Ingredient
+};
