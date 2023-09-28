@@ -1,0 +1,5 @@
+.salad-list-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
