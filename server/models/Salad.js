@@ -20,7 +20,8 @@ const saladSchema = new Schema({
         validate: {
             validator: (v) => v > new Date()
         }
-    }
+    },
+    images: Array
 });
 
 const Salad = mongoose.model('Salad', saladSchema);

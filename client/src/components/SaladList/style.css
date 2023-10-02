@@ -1,5 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .salad-list-wrapper {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     gap: 15px;
+}
+
+.card-wrapper {
+    border: 1px solid teal;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+}
+
+.image-wrapper {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }

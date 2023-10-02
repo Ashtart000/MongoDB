@@ -1,4 +1,5 @@
 .*
 !.gitignore
 /node_modules/
-sandboxMongo.js
+sandboxMongo.
+/public/

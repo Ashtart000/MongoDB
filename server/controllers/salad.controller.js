@@ -3,6 +3,7 @@ const { Salad } = require('./../models/index');
 module.exports.createSalad = async (req, res, next) => {
     try {
         const { body, ingredients } = req;
+
         const salad = await Salad.create({...body, ingredients});
         return res.status(201).send(salad)
     } catch (error) {
@@ -36,8 +37,9 @@ module.exports.getAllSalads = async (req, res, next) => {
 
 module.exports.updateSalad = async (req, res, next) => {
     try {
-        const {body, params: {saladId}} = req;
-        const result = await Salad.findByIdAndUpdate(saladId, body, {returnDocument: 'after'});
+        const {body, params: {saladId}, ingredients} = req;
+
+        const result = await Salad.findByIdAndUpdate(saladId, {...body, ingredients}, {returnDocument: 'after'});
         return res.status(200).send(result);
     } catch (error) {
         next(error)
